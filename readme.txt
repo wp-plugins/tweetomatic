@@ -1,4 +1,4 @@
-=== Tweetomatic Basic ===
+=== Tweetomatic Simple Twitter Feed ===
 Contributors: creatomatic
 Donate link: http://tweetomatic.co.uk/
 Tags: tweetomatic, twitter, tweet, feed, api, 1.1, working, widget, shortcode
@@ -18,7 +18,11 @@ See http://tweetomatic.co.uk/docs/ for more information.
 
 == Installation ==
 
-See http://www.tweetomatic.co.uk/#howto
+1. Sign into Twitter API and register an app.
+2. Download and install the Tweetomatic plugin.
+3. Insert the shortcode, or integrate the Tweetomatic widget.
+
+There's a full howto and options list available at http://www.tweetomatic.co.uk.
 
 Requires:
 	cURL.
