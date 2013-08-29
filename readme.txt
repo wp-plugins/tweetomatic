@@ -3,8 +3,8 @@ Contributors: creatomatic
 Donate link: http://tweetomatic.co.uk/
 Tags: tweetomatic, twitter, tweet, feed, api, 1.1, working, widget, shortcode
 Requires at least: 3.0.1
-Tested up to: 3.6
-Stable tag: 0.06
+Tested up to: 3.7
+Stable tag: 1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,10 @@ See http://tweetomatic.co.uk/
 
 == Changelog ==
 
+= 1.0 =
+
+- Fixed multi-byte tweet offset issue.
+
 = 0.06 =
 
 - Bumped 'Tested up to' of readme
@@ -51,6 +55,10 @@ See http://tweetomatic.co.uk/
 - Big rewrite to conform with wordpress.org guidelines.
 
 == Upgrade Notice ==
+
+= 1.0 =
+
+Now compatible with Tweets in other languages.
 
 = 0.05 =
 

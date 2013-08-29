@@ -3,7 +3,7 @@
 Plugin Name: Tweetomatic Basic
 Plugin URI: http://tweetomatic.co.uk/
 Description: A simple Wordpress Twitter feed widget and shortcode compatible with the new Twitter 1.1 API.
-Version: 0.06
+Version: 1.0
 Author: Creatomatic Ltd
 Author URI: http://www.creatomatic.co.uk/
 License: Copyright 2013  Creatomatic Ltd (email : info@creatomatic.co.uk)
@@ -25,7 +25,7 @@ License: Copyright 2013  Creatomatic Ltd (email : info@creatomatic.co.uk)
 if(defined('TWEETOMATIC_VERSION'))
 	return false;
 
-define('TWEETOMATIC_VERSION', 'basic_0.06');
+define('TWEETOMATIC_VERSION', 'basic_1.0');
 
 include dirname(__FILE__) . "/tweetomatic_widget.php";
 include dirname(__FILE__) . "/tweetomatic_settings.php";
@@ -140,7 +140,7 @@ function tweetomatic ( $atts, $content = null ) {
 				continue;
 
 			// text before entity
-			$tmp = substr($tweet_formatted, 0, $indice_start);
+			$tmp = mb_substr($tweet_formatted, 0, $indice_start);
 
 			if($entity['type'] == 'user_mentions')
 				$tmp .= '<a target="_blank" href="https://twitter.com/' . $entity['screen_name'] . '">@' . $entity['screen_name'] . '</a>';
@@ -152,7 +152,7 @@ function tweetomatic ( $atts, $content = null ) {
 				$tmp .= '<a target="_blank" href="https://twitter.com/search/realtime?q=%23' . $entity['text'] . '&src=hash">#' . $entity['text'] . '</a>';
 
 			// text after entity
-			$tweet_formatted = $tmp . substr($tweet_formatted, $entity['indice_stop']);
+			$tweet_formatted = $tmp . mb_substr($tweet_formatted, $entity['indice_stop']);
 
 		}
 
