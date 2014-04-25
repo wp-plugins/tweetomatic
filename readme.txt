@@ -3,7 +3,7 @@ Contributors: creatomatic
 Donate link: http://tweetomatic.co.uk/
 Tags: tweetomatic, twitter, tweet, feed, api, 1.1, working, widget, shortcode
 Requires at least: 3.0.1
-Tested up to: 3.7
+Tested up to: 3.9
 Stable tag: 1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,6 +38,10 @@ See http://tweetomatic.co.uk/
 2. Available settings in the Widget page.
 
 == Changelog ==
+
+= 1.1 =
+
+- Tested with new Wordpress
 
 = 1.0 =
 

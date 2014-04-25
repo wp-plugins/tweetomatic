@@ -3,7 +3,7 @@
 Plugin Name: Tweetomatic Basic
 Plugin URI: http://tweetomatic.co.uk/
 Description: A simple Wordpress Twitter feed widget and shortcode compatible with the new Twitter 1.1 API.
-Version: 1.0
+Version: 1.1
 Author: Creatomatic Ltd
 Author URI: http://www.creatomatic.co.uk/
 License: Copyright 2013  Creatomatic Ltd (email : info@creatomatic.co.uk)
@@ -25,7 +25,7 @@ License: Copyright 2013  Creatomatic Ltd (email : info@creatomatic.co.uk)
 if(defined('TWEETOMATIC_VERSION'))
 	return false;
 
-define('TWEETOMATIC_VERSION', 'basic_1.0');
+define('TWEETOMATIC_VERSION', 'basic_1.1');
 
 include dirname(__FILE__) . "/tweetomatic_widget.php";
 include dirname(__FILE__) . "/tweetomatic_settings.php";
