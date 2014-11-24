@@ -3,8 +3,8 @@ Contributors: creatomatic
 Donate link: http://tweetomatic.co.uk/
 Tags: tweetomatic, twitter, tweet, feed, api, 1.1, working, widget, shortcode
 Requires at least: 3.0.1
-Tested up to: 3.9
-Stable tag: 1.0
+Tested up to: 4.0
+Stable tag: 1.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,8 +25,8 @@ See http://tweetomatic.co.uk/docs/ for more information.
 There's a full howto and options list available at http://www.tweetomatic.co.uk.
 
 Requires:
-	cURL.
-	Correct time on server.
+- cURL.
+- Correct time on server.
 
 == Frequently Asked Questions ==
 
@@ -38,6 +38,10 @@ See http://tweetomatic.co.uk/
 2. Available settings in the Widget page.
 
 == Changelog ==
+
+= 1.2 =
+
+- Changed caching method to use transients.  Tidied code
 
 = 1.1 =
 

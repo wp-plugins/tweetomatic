@@ -1,23 +1,23 @@
 <?php
 /*
-  Tweetomatic - Widget page
-  Copyright 2013  Creatomatic Ltd
+	Tweetomatic - Widget page
+	Copyright 2014  Creatomatic Ltd
 */
 
-if(!defined('TWEETOMATIC_VERSION'))
+if(!defined("TWEETOMATIC_VERSION"))
 	die();
 
 class tweetomatic_widget extends WP_Widget {
 
 	public function __construct() {
 		parent::__construct(
-	 		'tweetomatic_widget', // widget ID
-			'Tweetomatic', // name
-			array( 'description' => __( 'A Twitter feed widget'))
+	 		"tweetomatic_widget", // widget ID
+			"Tweetomatic",        // name
+			array(
+				"description" => "A Twitter feed widget"
+			)
 		);
 	}
-
-
 
 	public function update($new_instance, $old_instance) {
 		//$new_instances = array();
@@ -25,7 +25,7 @@ class tweetomatic_widget extends WP_Widget {
 		//	$new_instances[$key] = strip_tags( $new_instanc );
 		//}
 
-		foreach(array('show_powered_by') as $checkbox) {
+		foreach(array("show_powered_by") as $checkbox) {
 			$new_instance[$checkbox] = (isset($new_instance[$checkbox]) ? "true" : "false");
 		}
 
@@ -33,16 +33,14 @@ class tweetomatic_widget extends WP_Widget {
 	}
 
 
-
-
 	// admin box
 	public function form($instance) {
 
 		$std_fields = array(
 			// field => array(name, default, pro-only)
-			'General',
-			'title'                      => array('Title', ''),
-			'user'                       => array('Twitter username'),
+			"General",
+			"title"                      => array("Title", ""),
+			"user"                       => array("Twitter username"),
 		);
 
 		foreach($std_fields as $field => $values) {
@@ -79,8 +77,8 @@ class tweetomatic_widget extends WP_Widget {
 		<p>
 			<label>Show 'Powered by...'</label><br />
 			<input name="<?php echo $this->get_field_name('show_powered_by'); ?>" type="checkbox" <?php
-				if(@$instance['show_powered_by'] != "false") {
-					echo 'checked';
+				if(@$instance["show_powered_by"] != "false") {
+					echo "checked";
 				} ?> />
 		</p>
 
@@ -95,7 +93,7 @@ class tweetomatic_widget extends WP_Widget {
 
 		echo $before_widget;
 
-		$instance['title'] = $before_title . apply_filters('widget_title', @$instance['title']) . $after_title;
+		$instance["title"] = $before_title . apply_filters("widget_title", @$instance["title"]) . $after_title;
 
 		echo tweetomatic($instance);
 
@@ -105,8 +103,8 @@ class tweetomatic_widget extends WP_Widget {
 } // end of class
 
 function register_tweetomatic_widget () {
-	register_widget('tweetomatic_widget');
+	register_widget("tweetomatic_widget");
 }
 
-add_action('widgets_init', 'register_tweetomatic_widget');
+add_action("widgets_init", "register_tweetomatic_widget");
 ?>
