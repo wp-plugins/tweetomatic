@@ -3,7 +3,7 @@
 Plugin Name: Tweetomatic Basic
 Plugin URI: http://tweetomatic.co.uk/
 Description: A simple Wordpress Twitter feed widget and shortcode compatible with the new Twitter 1.1 API.
-Version: 1.2
+Version: 1.3
 Author: Creatomatic Ltd
 Author URI: http://www.creatomatic.co.uk/
 License: Copyright 2014  Creatomatic Ltd (email : info@creatomatic.co.uk)
@@ -25,7 +25,7 @@ License: Copyright 2014  Creatomatic Ltd (email : info@creatomatic.co.uk)
 if(defined("TWEETOMATIC_VERSION"))
 	return false;
 
-define("TWEETOMATIC_VERSION", "basic_1.2");
+define("TWEETOMATIC_VERSION", "basic_1.3");
 
 include dirname(__FILE__) . "/tweetomatic_widget.php";
 include dirname(__FILE__) . "/tweetomatic_settings.php";
@@ -55,10 +55,11 @@ function tweetomatic ( $atts, $content = null ) {
 	$html = "\n<div class=\"tweetomatic\">\n";
 	$html .= $tweetomatic_config["title"]. "\n";
 
+	$cache_key = "tweetomatic_cache_" . substr( sha1( serialize($tweetomatic_config) ) , 0, 10);
 	//$cache_file = dirname(__FILE__) . "/cache/" . substr( sha1( serialize($tweetomatic_config) ) , 0, 16) .".cache";
 
 	//if(file_exists($cache_file) && (time() - filemtime($cache_file)) < 60*5 && ($cache_version = @file_get_contents($cache_file)) ) {
-	if( false !== ( $cache_version = get_transient("tweetomatic_cache") ) ) {
+	if( false !== ( $cache_version = get_transient( $cache_key ) ) ) {
 		return $cache_version; // . "\n loaded from cache!\n";
 	}
 
@@ -173,7 +174,7 @@ function tweetomatic ( $atts, $content = null ) {
 	//file_put_contents($cache_file, $final);
 	//chmod($cache_file, 0600);
 
-	set_transient("tweetomatic_cache", $final, 60*5);
+	set_transient($cache_key, $final, 60*5);
 
 	return $final;
 }
